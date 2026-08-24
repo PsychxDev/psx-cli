@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Docs — PsX</title>
+    <link rel="stylesheet" href="css/navfooter.css">
+    <link rel="stylesheet" href="css/docs.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PsX</a>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="commands.html">Commands</a>
+                <a href="docs.html">Docs</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="docs">
+
+        <aside class="docs-sidebar">
+
+            <div class="docs-sidebar-section">
+                <h2>Getting Started</h2>
+
+                <a href="#installation">Installation</a>
+                <a href="#requirements">Requirements</a>
+                <a href="#first-run">First Run</a>
+            </div>
+
+
+            <div class="sidebar-section">
+                <h2>Usage</h2>
+
+                <a href="#basic-usage">Basic Usage</a>
+                <a href="#output">Output</a>
+            </div>
+
+
+            <div class="sidebar-section">
+                <h2>Development</h2>
+
+                <a href="#project-structure">Project Structure</a>
+                <a href="#contributing">Contributing</a>
+            </div>
+
+        </aside>
+
+
+        <section class="docs-content">
+
+            <div class="docs-intro">
+
+                <span class="eyebrow">DOCUMENTATION</span>
+
+                <h1>PSX CLI Documentation</h1>
+
+                <p>
+                    Learn how to install, use, and contribute to PSX CLI.
+                    Everything you need to get started is here.
+                </p>
+
+            </div>
+
+
+            <section id="installation" class="docs-section">
+
+                <h2>Installation</h2>
+
+                <p>
+                    PSX can be installed globally using pipx.
+                    This keeps PSX isolated while making the
+                    <code>psx</code> command available from any terminal.
+                </p>
+
+                <div class="docs-code">
+                    <code>pipx install psx-sys</code>
+                </div>
+
+            </section>
+
+
+            <section id="requirements" class="docs-section">
+
+                <h2>Requirements</h2>
+
+                <ul>
+                    <li>Linux</li>
+                    <li>Python 3.10 or newer</li>
+                    <li>pipx</li>
+                </ul>
+
+            </section>
+
+
+            <section id="first-run" class="docs-section">
+
+                <h2>First Run</h2>
+
+                <p>
+                    After installation, run PSX directly from your terminal:
+                </p>
+
+                <div class="docs-code">
+                    <code>psx</code>
+                </div>
+
+                <p>
+                    You can also run individual commands directly.
+                    See the <a href="/commands">Commands</a> page
+                    for the complete command reference.
+                </p>
+
+            </section>
+
+
+            <section id="basic-usage" class="docs-section">
+
+                <h2>Basic Usage</h2>
+
+                <p>
+                    PSX is designed to provide useful system information
+                    through simple terminal commands.
+                </p>
+
+                <div class="docs-code">
+                    <code>psx &lt;command&gt;</code>
+                </div>
+
+            </section>
+
+
+            <section id="output" class="docs-section">
+
+                <h2>Output</h2>
+
+                <p>
+                    PSX displays information directly in the terminal
+                    using a clean and readable format.
+                </p>
+
+            </section>
+
+
+            <section id="project-structure" class="docs-section">
+
+                <h2>Project Structure</h2>
+
+                <p>
+                    PSX follows a modular Python project structure.
+                    Commands are organized separately from the main
+                    application logic.
+                </p>
+
+                <div class="code-block">
+<pre>
+psx-cli/
+├── psx/
+│   ├── commands/
+│   ├── __init__.py
+│   └── main.py
+├── pyproject.toml
+├── README.md
+└── LICENSE
+</pre>
+                </div>
+
+            </section>
+
+
+            <section id="contributing" class="docs-section">
+
+                <h2>Contributing</h2>
+
+                <p>
+                    PSX is open source. Contributions, improvements,
+                    and bug fixes are welcome.
+                </p>
+
+                <a
+                    href="https://github.com/PsychxDev/psx-cli"
+                    class="docs-github"
+                >
+                    View on GitHub
+                </a>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+        PsychxDev © 2026
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at 50% 0%,
+    rgba(25, 58, 73, 0.1),
+    transparent 20%)
+    #0b1220;
+    color: #e6edf7;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #164e63;
+    opacity: 0.15;
+    border-radius: 50%;
+    filter: blur(120px);
+    top: -200px;
+    right: -150px;
+    z-index: -1;
+}
+
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+
+.hero h1 {
+    font-size: 64px;
+    margin: 0;
+}
+
+
+
+.hero p {
+    font-size: 20px;
+    color: #454f63;
+}
+
+.hero a {
+    display: inline-block;
+    width: 180px;
+    margin-top: 10px;
+    padding: 13px 20px;
+    background: #7dd3fc;
+    color: #0b1220;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.2 ease;
+}
+
+.hero a {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #7dd3fc;
+    color: #0b1220;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.hero a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(125, 211, 252, 0.25);
+}
+
+.features {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0px 20px 60px;
+}
+
+
+.features-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.features-cards > div {
+    flex: 1;
+    background: #111c2e;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.features-cards > div:hover {
+    transform: translateY(-4px);
+}

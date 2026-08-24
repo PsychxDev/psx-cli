@@ -1,0 +1,78 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(40, 59, 99, 0.192);
+    backdrop-filter: blur(12px),
+    saturate(180%);
+    -webkit-backdrop-filter: blur(24px),
+    saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.103);
+    border-radius: 14px;
+    box-shadow: 1px solid rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    padding: 10px 16px;
+    margin: 24px auto;
+    max-width: 1100px;
+
+}
+
+nav div {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 9px;
+    transition: color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+nav a:hover:not(.logo) {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+nav .logo {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 28px;
+    text-decoration: none;
+    transition: transform 0.25s ease,
+    text-shadow 0 0 12px rgba(125, 211, 252, 0.55);
+}
+
+nav .logo:hover {
+    transform: scale(1.06) translateY(-2px);
+    text-shadow: 0 0 12px rgba(125, 211, 252, 0.55);
+}
+
+nav > a {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+nav div a {
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.2 ease;
+}
+
+nav div a:hover {
+    color: #45aedfb6;
+    background: #26364d;
+    transform: translateY(-2px);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #94a3b8;
+    border-top: 1px solid #26364d;
+}
