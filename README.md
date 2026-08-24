@@ -26,7 +26,7 @@ The tool is designed to make common system information easy to access through si
 * `date` — Show the current date and time
 * `disk` — Show disk usage
 * `help` — Show available commands
-* `info` — Show system information
+* `sysinfo` — Show system information
 * `memory` — Show memory usage
 * `network` — Show network information
 * `partition` — Show partition information
