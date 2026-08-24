@@ -45,7 +45,7 @@ The tool is designed to make common system information easy to access through si
 Install PSX using pipx:
 
 ```bash
-pipx install psx
+pipx install psx-sys
 ```
 
 After installation, you can run PSX directly from the terminal:
