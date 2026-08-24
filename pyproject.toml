@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psx"
+version = "1.0.0"
+description = "A lightweight Linux system utility CLI"
+requires-python = ">=3.10"
+dependencies = [
+    "psutil"
+]
+
+[project.scripts]
+psx = "psx.main:main"
