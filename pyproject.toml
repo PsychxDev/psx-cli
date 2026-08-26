@@ -11,5 +11,9 @@ dependencies = [
     "psutil"
 ]
 
+[tool.setuptools.packages.find]
+include = ["psx*"]
+exclude = ["website*"]
+
 [project.scripts]
 psx = "psx.main:main"
