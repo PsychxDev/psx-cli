@@ -63,17 +63,22 @@ commands = {
 }
 
 def main() :
-    args = sys.argv[1:]
-    command = args[0]
+    try:
 
-    if command == "help" :
-        commands["help"]["run"](commands)
+        args = sys.argv[1:]
+        command = args[0]
 
-    elif command in commands :
-        commands[command]["run"]()
+        if command == "help" :
+            commands["help"]["run"](commands)
 
-    else :
-        print(f"Unknown Command: {command}")
+        elif command in commands :
+            commands[command]["run"]()
+
+        else :
+            print(f"Unknown Command: {command}")
+
+    except IndexError:
+        print("Missing command, must be -> psx <command>")
 
 if __name__ == "__main__" :
     main()
