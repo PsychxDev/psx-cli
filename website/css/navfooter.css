@@ -80,7 +80,6 @@ nav {
     border-radius: 13px;
     background: linear-gradient(135deg, rgba(18, 37, 51, 0.92), rgba(9, 21, 30, 0.82));
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.055);
-    backdrop-filter: blur(16px);
 }
 
 nav::after {
@@ -169,11 +168,16 @@ footer::before {
 
 footer span:last-child { color: var(--muted); }
 
+nav > * { min-width: 0; }
+
+@media (max-width: 760px) {
+    nav { gap: 13px; flex-wrap: wrap; justify-content: center; }
+    nav div { width: 100%; justify-content: center; }
+}
+
 @media (max-width: 620px) {
     header,
     footer { width: calc(100% - 32px); }
-    nav { gap: 13px; flex-wrap: wrap; justify-content: center; }
-    nav div { width: 100%; justify-content: center; }
     footer { display: block; line-height: 2; }
     footer span { display: block; }
 }

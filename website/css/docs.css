@@ -63,6 +63,8 @@ body {
     color: var(--accent);
     transform: translateX(4px);
 }
+.docs > * { min-width: 0; }
+.docs-section p, .docs-section li { overflow-wrap: anywhere; }
 @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes sectionIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 800px) { .docs { width: calc(100% - 32px); display: block; padding-top: 65px; }.docs-sidebar { position: static; display: flex; gap: 28px; margin-bottom: 34px; }.docs-sidebar-section, .sidebar-section { margin: 0; }.docs-sidebar-section h2, .sidebar-section h2 { font-size: 10px; }.docs-sidebar-section a, .sidebar-section a { padding-left: 0; } }
