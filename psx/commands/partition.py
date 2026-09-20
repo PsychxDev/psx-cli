@@ -10,7 +10,7 @@ def run() :
     )
     data = json.loads(result.stdout)
 
-    length = header("Partitions Info")
+    length = header("Partition Information")
     for device in data["blockdevices"]:
         if device.get("children"):
             for partition in device["children"]:

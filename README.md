@@ -1,74 +1,78 @@
 # PSX CLI
 
-A lightweight terminal-based system information utility written in Python.
+PSX CLI is a lightweight Linux system utility written in Python. It gives you quick access to system information, resource usage, and live weather data directly from the terminal.
 
-## Description
+## Overview
 
-PSX CLI is a simple Linux command-line tool that provides useful system information directly from the terminal.
-
-The tool is designed to make common system information easy to access through simple commands.
+This project is designed to make common system checks fast and simple. It focuses on a clean terminal interface and easy-to-read output.
 
 ## Features
 
-* System information
-* Memory usage
-* Disk usage
-* Partition information
-* Network information
-* System uptime
-* Date and time information
-* Clean terminal output
-* Modular command structure
+* System information overview
+* Memory usage details
+* Disk and partition information
+* Network status and IP information
+* System uptime tracking
+* Current date and time
+* Live weather lookup
+* Clean, readable terminal output
+* Modular command-based structure
 
 ## Commands
 
-* `about` — Show information about PSX
-* `date` — Show the current date and time
-* `disk` — Show disk usage
-* `help` — Show available commands
-* `sysinfo` — Show system information
-* `memory` — Show memory usage
-* `network` — Show network information
-* `partition` — Show partition information
-* `uptime` — Show system uptime
+* `help` — Show all available commands
+* `about` — Show information about the project
 * `version` — Show the current PSX version
-
-## Technologies Used
-
-* Python
-* psutil
-* Linux
-* Custom Python modules
+* `sysinfo` — Show OS, distro, kernel, CPU, and RAM info
+* `date` — Show the current date and time
+* `network` — Show network status and interfaces
+* `memory` — Show memory usage details
+* `disk` — Show detected disks
+* `partition` — Show system partitions
+* `uptime` — Show system uptime
+* `weather` — Show the current weather for your location
 
 ## Installation
 
-Install PSX using pipx:
+Install the package with pip:
 
 ```bash
-pipx install psx-sys
+pip install psx-sys
 ```
 
-After installation, you can run PSX directly from the terminal:
+Or install it in editable mode for development:
 
 ```bash
-psx
+git clone https://github.com/your-username/psx-cli.git
+cd psx-cli
+pip install -e .
+```
+
+After installation, run:
+
+```bash
+psx help
 ```
 
 ## Usage
 
-Run PSX and choose a command:
-
 ```bash
-psx
-```
-
-You can also use the available commands directly:
-
-```bash
-psx uptime
+psx help
+psx sysinfo
 psx memory
 psx disk
 psx network
+psx weather
+psx date
+psx uptime
+```
+
+## Example Output
+
+```text
+===== PsX Date & Time =====
+20-9-2026 | 7:11 PM
+===========================
 ```
 
 ## Project Structure
@@ -80,18 +84,22 @@ psx-cli/
 │   ├── utils/
 │   ├── __init__.py
 │   └── main.py
-├── .gitignore
+├── README.md
 ├── pyproject.toml
-└── README.md
+├── LICENSE
+└── .gitignore
 ```
 
-## Future Improvements
+## Release Notes
 
-* More system information commands
-* Better command output
-* Additional network information
-* Improved error handling
-* More customization options
+### v1.1.0
+
+* Added a dynamic version command
+* Improved output formatting and consistency
+* Added weather support
+* Improved offline network detection
+* Improved English wording and command descriptions
+* Overall cleanup and usability improvements
 
 ## License
 

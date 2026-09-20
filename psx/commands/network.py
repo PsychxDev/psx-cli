@@ -1,27 +1,35 @@
-import psutil
 import socket
+
+import psutil
 from psx.utils.display import header, sep
 
-def run() :
+
+def run():
     interfaces = psutil.net_if_addrs()
     stats = psutil.net_if_stats()
 
+    active = False
+    length = header("Network Information")
+
     for interface, addresses in interfaces.items():
-        
-        if interface == "lo" :
+        if interface == "lo":
             continue
 
-        if not stats[interface].isup :
+        if interface not in stats or not stats[interface].isup:
             continue
 
-        length = header("Network Information")
-        
+        active = True
         print(f"{'Interface:':12} {interface}")
-        print(f"{'Status:':12} UP" if stats[interface].isup else f"{'Status:':12} DOWN")
-        
-        for address in addresses :
-            if address.family == socket.AF_INET :
+        print(f"{'Status:':12} UP")
+
+        for address in addresses:
+            if address.family == socket.AF_INET:
                 print(f"{'IPv4:':12} {address.address}")
                 print(f"{'Netmask:':12} {address.netmask}")
 
+        sep(length)
+
+    if not active:
+        print(f"{'Status:':12} OFFLINE")
+        print(f"{'Message:':12} No active network interface detected.")
         sep(length)

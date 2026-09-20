@@ -23,7 +23,9 @@ def ram_info() :
 def run() :
     os_info = platform.freedesktop_os_release()
     length = header("System Info")
-    print(f"{'OS:':13} {platform.system()} \n{'Distro:':13} {os_info["PRETTY_NAME"]} \n{'Kernel:':13} {platform.release()}")
+    print(f"{'OS:':13} {platform.system()}")
+    print(f"{'Distro:':13} {os_info['PRETTY_NAME']}")
+    print(f"{'Kernel:':13} {platform.release()}")
     print(f"{'Architecture:':13} {platform.machine()}")
     cpu_info()
     ram_info()

@@ -9,21 +9,22 @@ from psx.commands import date
 from psx.commands import about
 from psx.commands import uptime
 from psx.commands import network
+from psx.commands import weather
 
 commands = {
     "help": {
         "run": help_command.run,
-        "description": "Shows available commands."
+        "description": "Shows all available commands."
     },
 
     "version": {
         "run": version.run,
-        "description": "Displays the current version of psx."
+        "description": "Displays the current PsX version."
     },
 
     "about": {
         "run": about.run,
-        "description": "Information about the tool itself"
+        "description": "Provides information about the tool itself."
     },
 
     "sysinfo": {
@@ -33,32 +34,37 @@ commands = {
 
     "date": {
         "run": date.run,
-        "description": "Shows the current date."
+        "description": "Shows the current date and time."
     },
 
     "memory": {
         "run": memory.run,
-        "description": "Shows information about random access memory."
+        "description": "Shows information about system memory."
     },
 
     "disk": {
         "run": disk.run,
-        "description": "Shows all disks detected on your device."
+        "description": "Shows all detected disks on your device."
     },
 
     "partition": {
         "run": partition.run,
-        "description": "Shows all partitions on your PC."
+        "description": "Shows all partitions on your system."
     },
 
     "uptime": {
         "run": uptime.run,
-        "description": "Shows device Uptime."
+        "description": "Shows the system uptime."
     },
 
     "network": {
         "run": network.run,
-        "description": "Shows network information"
+        "description": "Shows network information."
+    },
+
+    "weather": {
+        "run": weather.run,
+        "description": "Shows the current weather."
     },
 }
 
