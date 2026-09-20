@@ -17,7 +17,7 @@
             <div>
                 <a href="index.html">Home</a>
                 <a href="commands.html">Commands</a>
-                <a href="docs.html">Docs</a>
+                <a href="docs.html" aria-current="page">Docs</a>
                 <a href="about.html">About</a>
             </div>
         </nav>
@@ -64,8 +64,7 @@
                 <h1>PSX CLI Documentation</h1>
 
                 <p>
-                    Learn how to install, use, and contribute to PSX CLI.
-                    Everything you need to get started is here.
+                    Install PSX, run your first command, and find the reference pages for its system checks.
                 </p>
 
             </div>
@@ -76,9 +75,7 @@
                 <h2>Installation</h2>
 
                 <p>
-                    PSX can be installed globally using pipx.
-                    This keeps PSX isolated while making the
-                    <code>psx</code> command available from any terminal.
+                    Install PSX with pipx. This keeps it isolated from other Python packages while making the <code>psx</code> command available from your terminal.
                 </p>
 
                 <div class="docs-code">
@@ -106,7 +103,7 @@
                 <h2>First Run</h2>
 
                 <p>
-                    After installation, run PSX directly from your terminal:
+                    After installation, ask PSX for its available commands:
                 </p>
 
                 <div class="docs-code">
@@ -114,9 +111,7 @@
                 </div>
 
                 <p>
-                    You can also run individual commands directly.
-                    See the <a href="commands.html">Commands</a> page
-                    for the complete command reference.
+                    You can then run individual commands such as <code>psx sysinfo</code> or <code>psx memory</code>. See the <a href="commands.html">Commands</a> page for the full reference.
                 </p>
 
             </section>
@@ -127,8 +122,7 @@
                 <h2>Basic Usage</h2>
 
                 <p>
-                    PSX is designed to provide useful system information
-                    through simple terminal commands.
+                    PSX follows a simple pattern: prefix a command with <code>psx</code> and read the result directly in the terminal.
                 </p>
 
                 <div class="docs-code">
@@ -143,8 +137,7 @@
                 <h2>Output</h2>
 
                 <p>
-                    PSX displays information directly in the terminal
-                    using a clean and readable format.
+                    Output is printed in the terminal so it can be read, copied, or used in the next step of your workflow.
                 </p>
 
             </section>
@@ -155,9 +148,7 @@
                 <h2>Project Structure</h2>
 
                 <p>
-                    PSX follows a modular Python project structure.
-                    Commands are organized separately from the main
-                    application logic.
+                    PSX uses a modular Python structure. Command implementations are kept separate from the main application logic so individual checks remain easy to inspect.
                 </p>
 
                 <div class="code-block">
@@ -181,8 +172,7 @@ psx-cli/
                 <h2>Contributing</h2>
 
                 <p>
-                    PSX is open source. Contributions, improvements,
-                    and bug fixes are welcome.
+                    PSX is open source. Bug reports, documentation fixes, and practical improvements are welcome.
                 </p>
 
                 <a

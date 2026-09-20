@@ -1,50 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - PsX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PsX is a lightweight Linux command-line utility for everyday system checks.">
+    <title>PsX CLI - Linux checks without the clutter</title>
     <link rel="stylesheet" href="css/navfooter.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home-page">
     <header>
         <nav>
             <a href="index.html" class="logo">PsX</a>
             <div>
-                <a href="index.html">Home</a>
+                <a href="index.html" aria-current="page">Home</a>
                 <a href="commands.html">Commands</a>
                 <a href="docs.html">Docs</a>
                 <a href="about.html">About</a>
             </div>
         </nav>
     </header>
+
     <main>
-        <section class="hero">
-            <h1>PsX</h1>
-            <p>Useful tools, one terminal.</p>
-            <a href="docs.html">Get Started</a>
-        </section>
-        <section class="features">
-            <h2>Features</h2>
-            <div class="features-cards">
-                <div>
-                    <h3>Open Source</h3>
-                    <p>Inspect the code, modify it, and make PsX work the way you want.</p>
+        <section class="landing-hero">
+            <div class="hero-copy">
+                <p class="hero-kicker"><span class="status-dot"></span> a small Linux utility</p>
+                <h1>Know what your machine is doing.</h1>
+                <p class="hero-summary">PsX puts the system checks you reach for every day behind short, readable commands. Ask the terminal a question and get back to work.</p>
+                <div class="hero-actions">
+                    <a class="hero-primary" href="docs.html">Install PsX <span>-></span></a>
+                    <a class="hero-secondary" href="commands.html">View all commands</a>
                 </div>
-
-                <div>
-                    <h3>Lightweight</h3>
-                    <p>Built to stay out of your way and keep your terminal experience fast and simple.</p>
-                </div>
-
-                <div>
-                    <h3>Linux First</h3>
-                    <p>Designed around the tools, workflows, and freedom of the Linux command line.</p>
-                </div>
+                <p class="hero-note">Works from the terminal. Built for Linux. No account required.</p>
             </div>
-            </section>
-        <footer>PsychxDev © 2026</footer>
+
+            <div class="console-card" aria-label="Example PsX terminal output">
+                <div class="console-topbar"><span class="window-lights"><i></i><i></i><i></i></span><span>psx@localhost</span><span>bash</span></div>
+                <div class="console-body">
+                    <p class="console-command"><b>$</b> psx sysinfo</p>
+                    <div class="console-result"><span>OS</span>Linux / 6.8.0</div>
+                    <div class="console-result"><span>CPU</span>8 cores</div>
+                    <div class="console-result"><span>RAM</span>15.4 GiB available</div>
+                    <p class="console-command"><b>$</b> psx uptime</p>
+                    <div class="console-result"><span>UP</span>8 days, 04:12</div>
+                    <p class="console-command last"><b>$</b> <span class="typing-cursor"></span></p>
+                </div>
+                <div class="console-footer"><span>ready</span><span>psx 1.1.0</span></div>
+            </div>
+        </section>
+
+        <section class="quick-facts" aria-label="PsX facts">
+            <div><strong>11</strong><span>focused commands</span></div>
+            <div><strong>0</strong><span>accounts needed</span></div>
+            <div><strong>1</strong><span>terminal interface</span></div>
+        </section>
+
+        <section class="command-preview">
+            <div class="section-intro">
+                <p class="section-label">The useful set</p>
+                <h2>Small questions,<br><em>quick answers.</em></h2>
+                <p>PsX does not try to be a complete replacement for Linux tools. It keeps the everyday checks together and easy to remember.</p>
+                <a class="under-link" href="commands.html">Explore the command reference <span>-></span></a>
+            </div>
+            <div class="command-grid">
+                <a href="commands.html#sysinfo" class="command-tile"><span class="tile-index">01</span><strong>sysinfo</strong><small>OS, kernel, CPU, and RAM</small></a>
+                <a href="commands.html#memory" class="command-tile"><span class="tile-index">02</span><strong>memory</strong><small>current memory details</small></a>
+                <a href="commands.html#disk" class="command-tile"><span class="tile-index">03</span><strong>disk</strong><small>detected storage devices</small></a>
+                <a href="commands.html#network" class="command-tile"><span class="tile-index">04</span><strong>network</strong><small>interfaces and addresses</small></a>
+                <a href="commands.html#uptime" class="command-tile"><span class="tile-index">05</span><strong>uptime</strong><small>time since the last boot</small></a>
+                <a href="commands.html#weather" class="command-tile"><span class="tile-index">06</span><strong>weather</strong><small>live local conditions</small></a>
+            </div>
+        </section>
+
+        <section class="workflow">
+            <div class="workflow-heading"><p class="section-label">A simple routine</p><h2>Type it.<br>Read it.<br><em>Carry on.</em></h2></div>
+            <div class="workflow-steps">
+                <div class="workflow-step"><span>01</span><h3>Choose a check</h3><p>Use a command name that describes exactly what you want to inspect.</p></div>
+                <div class="workflow-step"><span>02</span><h3>Run it locally</h3><p>PsX reads the information available on your Linux machine and prints it in place.</p></div>
+                <div class="workflow-step"><span>03</span><h3>Keep moving</h3><p>No dashboard to open and no setup to remember after installation.</p></div>
+            </div>
+        </section>
+
+        <section class="closing-line"><p>Start with the command you already know you need.</p><a href="docs.html">Read the docs <span>-></span></a></section>
     </main>
+
+    <footer>PsychxDev © 2026</footer>
 </body>
 </html>

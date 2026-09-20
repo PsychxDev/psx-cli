@@ -19,7 +19,7 @@
 
             <div>
                 <a href="index.html">Home</a>
-                <a href="commands.html">Commands</a>
+                <a href="commands.html" aria-current="page">Commands</a>
                 <a href="docs.html">Docs</a>
                 <a href="about.html">About</a>
             </div>
@@ -54,6 +54,7 @@
                 <a href="#partition">partition</a>
                 <a href="#uptime">uptime</a>
                 <a href="#network">network</a>
+                <a href="#weather">weather</a>
             </div>
 
         </aside>
@@ -74,9 +75,7 @@
                 <h1>PSX CLI Commands</h1>
 
                 <p>
-                    Explore the commands available in PSX CLI.
-                    Each command provides a simple way to access
-                    useful system information directly from your terminal.
+                    This is the complete list of commands currently provided by PSX CLI. Each command handles one focused check and prints the result in your terminal.
                 </p>
 
             </div>
@@ -96,8 +95,7 @@
                 <h2>Help</h2>
 
                 <p>
-                    Displays information about available PSX commands
-                    and how to use the CLI.
+                    Shows all available commands and their purpose.
                 </p>
 
                 <div class="command-code">
@@ -117,7 +115,7 @@
                 <h2>Version</h2>
 
                 <p>
-                    Displays the currently installed version of PSX CLI.
+                    Displays the current PsX version.
                 </p>
 
                 <div class="command-code">
@@ -137,7 +135,7 @@
                 <h2>About</h2>
 
                 <p>
-                    Displays information about PSX CLI and the project.
+                    Provides information about the tool itself.
                 </p>
 
                 <div class="command-code">
@@ -161,8 +159,7 @@
                 <h2>System Information</h2>
 
                 <p>
-                    Displays general information about the current
-                    system and environment.
+                    Shows operating system, distribution, kernel, CPU, and RAM information.
                 </p>
 
                 <div class="command-code">
@@ -202,7 +199,7 @@
                 <h2>Memory</h2>
 
                 <p>
-                    Displays information about system memory usage.
+                    Shows information about system memory.
                 </p>
 
                 <div class="command-code">
@@ -222,8 +219,7 @@
                 <h2>Disk</h2>
 
                 <p>
-                    Displays information about available disk space
-                    and storage usage.
+                    Shows all detected disks on your device.
                 </p>
 
                 <div class="command-code">
@@ -243,8 +239,7 @@
                 <h2>Partition</h2>
 
                 <p>
-                    Displays information about the system's disk
-                    partitions.
+                    Shows all partitions on your system.
                 </p>
 
                 <div class="command-code">
@@ -264,8 +259,7 @@
                 <h2>Uptime</h2>
 
                 <p>
-                    Displays how long the system has been running
-                    since the last boot.
+                    Shows the system uptime.
                 </p>
 
                 <div class="command-code">
@@ -285,14 +279,25 @@
                 <h2>Network</h2>
 
                 <p>
-                    Displays useful information about the system's
-                    network configuration.
+                    Shows network information, including available interfaces and addresses.
                 </p>
 
                 <div class="command-code">
                     <code>psx network</code>
                 </div>
 
+            </section>
+
+            <section id="weather" class="command-section">
+                <div class="command-heading">
+                    <code>weather</code>
+                    <span>Utility</span>
+                </div>
+                <h2>Weather</h2>
+                <p>Shows the current weather, including the location, condition, temperature, and feels-like temperature. It requires an internet connection.</p>
+                <div class="command-code">
+                    <code>psx weather</code>
+                </div>
             </section>
 
         </section>
