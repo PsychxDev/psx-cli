@@ -4,17 +4,19 @@ on:
   release:
     types: [published]
   workflow_dispatch:
-  
+
 permissions:
   contents: read
   id-token: write
 
 jobs:
   publish:
+    name: Build and publish package
     runs-on: ubuntu-latest
 
     environment:
       name: pypi
+      url: https://pypi.org/p/psx-sys
 
     steps:
       - name: Checkout
@@ -23,13 +25,111 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.12"
+          cache: pip
 
-      - name: Install build
-        run: python -m pip install build
+      - name: Install build and validation tools
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install build twine
+
+      - name: Read package metadata
+        id: metadata
+        run: |
+          python - <<'PY'
+          import pathlib
+          import sys
+          import tomllib
+
+          path = pathlib.Path("pyproject.toml")
+
+          with path.open("rb") as file:
+              data = tomllib.load(file)
+
+          project = data.get("project", {})
+          name = project.get("name")
+          version = project.get("version")
+
+          if not name:
+              print("ERROR: project.name is missing from pyproject.toml")
+              sys.exit(1)
+
+          if not version:
+              print("ERROR: project.version is missing from pyproject.toml")
+              sys.exit(1)
+
+          print(f"Package name: {name}")
+          print(f"Package version: {version}")
+
+          with open(
+              pathlib.Path(__import__("os").environ["GITHUB_OUTPUT"]),
+              "a",
+              encoding="utf-8",
+          ) as output:
+              output.write(f"name={name}\n")
+              output.write(f"version={version}\n")
+          PY
+
+      - name: Check whether version already exists on PyPI
+        env:
+          PACKAGE_NAME: ${{ steps.metadata.outputs.name }}
+          PACKAGE_VERSION: ${{ steps.metadata.outputs.version }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import sys
+          import urllib.error
+          import urllib.request
+
+          package_name = os.environ["PACKAGE_NAME"]
+          package_version = os.environ["PACKAGE_VERSION"]
+
+          url = f"https://pypi.org/pypi/{package_name}/json"
+
+          try:
+              with urllib.request.urlopen(url) as response:
+                  data = json.load(response)
+          except urllib.error.HTTPError as error:
+              if error.code == 404:
+                  print(f"{package_name} is not registered on PyPI yet.")
+                  sys.exit(0)
+
+              print(f"Could not query PyPI: HTTP {error.code}")
+              sys.exit(1)
+
+          releases = data.get("releases", {})
+
+          if package_version in releases:
+              print(
+                  f"ERROR: {package_name} version {package_version} "
+                  "already exists on PyPI."
+              )
+              print("PyPI versions are immutable. Increase the version in "
+                    "pyproject.toml before publishing.")
+              sys.exit(1)
+
+          print(
+              f"Version {package_version} does not exist on PyPI. "
+              "Publishing can continue."
+          )
+          PY
+
+      - name: Clean previous build artifacts
+        run: |
+          rm -rf build dist
+          find . -maxdepth 1 -type d -name "*.egg-info" -exec rm -rf {} +
 
       - name: Build package
         run: python -m build
+
+      - name: Validate distributions
+        run: python -m twine check dist/*
+
+      - name: Show distributions
+        run: |
+          ls -lah dist/
+          sha256sum dist/*
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
