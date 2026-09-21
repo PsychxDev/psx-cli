@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Commands — PsX</title>
-
     <link rel="stylesheet" href="css/navfooter.css">
     <link rel="stylesheet" href="css/commands.css">
 </head>
-
 <body>
-
     <header>
         <nav>
             <a href="index.html" class="logo">PsX</a>
-
             <div>
                 <a href="index.html">Home</a>
                 <a href="commands.html" aria-current="page">Commands</a>
@@ -26,27 +20,172 @@
         </nav>
     </header>
 
-
     <main class="commands">
+        <section class="commands-content">
+            <div class="commands-intro">
+                <span class="commands-eyebrow">COMMAND REFERENCE</span>
+                <h1>PSX CLI Commands</h1>
+                <p>
+                    This is the complete list of commands currently provided by
+                    PSX CLI. Each command handles one focused check and prints
+                    the result in your terminal.
+                </p>
+            </div>
 
-        <!-- =========================
-             Sidebar
-        ========================== -->
+            <section id="help" class="command-section">
+                <div class="command-heading"><code>help</code><span>General</span></div>
+                <h2>Help</h2>
+                <p>Shows all available commands and their purpose.</p>
+                <div class="command-code"><code>psx help</code></div>
+            </section>
+
+            <section id="version" class="command-section">
+                <div class="command-heading"><code>version</code><span>General</span></div>
+                <h2>Version</h2>
+                <p>Displays the current PsX version.</p>
+                <div class="command-code"><code>psx version</code></div>
+            </section>
+
+            <section id="about" class="command-section">
+                <div class="command-heading"><code>about</code><span>General</span></div>
+                <h2>About</h2>
+                <p>Provides information about the tool itself.</p>
+                <div class="command-code"><code>psx about</code></div>
+            </section>
+
+            <section id="sysinfo" class="command-section">
+                <div class="command-heading"><code>sysinfo</code><span>System</span></div>
+                <h2>System Information</h2>
+                <p>Shows operating system, distribution, kernel, CPU, and RAM information.</p>
+                <div class="command-code"><code>psx sysinfo</code></div>
+            </section>
+
+            <section id="date" class="command-section">
+                <div class="command-heading"><code>date</code><span>System</span></div>
+                <h2>Date</h2>
+                <p>Displays the current system date and time.</p>
+                <div class="command-code"><code>psx date</code></div>
+            </section>
+
+            <section id="memory" class="command-section">
+                <div class="command-heading"><code>memory</code><span>System</span></div>
+                <h2>Memory</h2>
+                <p>Shows information about system memory.</p>
+                <div class="command-code"><code>psx memory</code></div>
+            </section>
+
+            <section id="disk" class="command-section">
+                <div class="command-heading"><code>disk</code><span>System</span></div>
+                <h2>Disk</h2>
+                <p>Shows all detected disks on your device.</p>
+                <div class="command-code"><code>psx disk</code></div>
+            </section>
+
+            <section id="partition" class="command-section">
+                <div class="command-heading"><code>partition</code><span>System</span></div>
+                <h2>Partition</h2>
+                <p>Shows all partitions on your system.</p>
+                <div class="command-code"><code>psx partition</code></div>
+            </section>
+
+            <section id="uptime" class="command-section">
+                <div class="command-heading"><code>uptime</code><span>System</span></div>
+                <h2>Uptime</h2>
+                <p>Shows the system uptime.</p>
+                <div class="command-code"><code>psx uptime</code></div>
+            </section>
+
+            <section id="network" class="command-section">
+                <div class="command-heading"><code>network</code><span>System</span></div>
+                <h2>Network</h2>
+                <p>Shows network information, including interfaces and addresses.</p>
+                <div class="command-code"><code>psx network</code></div>
+            </section>
+
+            <section id="domain" class="command-section">
+                <div class="command-heading"><code>domain</code><span>Network</span></div>
+                <h2>Domain</h2>
+                <p>Displays information about a domain.</p>
+                <div class="command-code"><code>psx domain</code></div>
+            </section>
+
+            <section id="ping" class="command-section">
+                <div class="command-heading"><code>ping</code><span>Network</span></div>
+                <h2>Ping</h2>
+                <p>Tests network connectivity to a host.</p>
+                <div class="command-code"><code>psx ping</code></div>
+            </section>
+
+            <section id="dns" class="command-section">
+                <div class="command-heading"><code>dns</code><span>Network</span></div>
+                <h2>DNS</h2>
+                <p>Checks DNS resolution.</p>
+                <div class="command-code"><code>psx dns</code></div>
+            </section>
+
+            <section id="todo" class="command-section">
+                <div class="command-heading"><code>todo</code><span>Utility</span></div>
+                <h2>Todo</h2>
+                <p>Manages todo items.</p>
+                <div class="command-code"><code>psx todo</code></div>
+            </section>
+
+            <section id="profile" class="command-section">
+                <div class="command-heading"><code>profile</code><span>Utility</span></div>
+                <h2>Profile</h2>
+                <p>Displays a system profile.</p>
+                <div class="command-code"><code>psx profile</code></div>
+            </section>
+
+            <section id="quick" class="command-section">
+                <div class="command-heading"><code>quick</code><span>Utility</span></div>
+                <h2>Quick Check</h2>
+                <p>Runs a quick system check.</p>
+                <div class="command-code"><code>psx quick</code></div>
+            </section>
+
+            <section id="health" class="command-section">
+                <div class="command-heading"><code>health</code><span>System</span></div>
+                <h2>Health</h2>
+                <p>Checks system health.</p>
+                <div class="command-code"><code>psx health</code></div>
+            </section>
+
+            <section id="clearspace" class="command-section">
+                <div class="command-heading"><code>clearspace</code><span>System</span></div>
+                <h2>Clear Space</h2>
+                <p>Finds files and locations that may be cleaned up.</p>
+                <div class="command-code"><code>psx clearspace</code></div>
+            </section>
+
+            <section id="track" class="command-section">
+                <div class="command-heading"><code>track</code><span>Utility</span></div>
+                <h2>Track</h2>
+                <p>Tracks system activity.</p>
+                <div class="command-code"><code>psx track</code></div>
+            </section>
+
+            <section id="weather" class="command-section">
+                <div class="command-heading"><code>weather</code><span>Utility</span></div>
+                <h2>Weather</h2>
+                <p>
+                    Shows the current weather, including location, condition,
+                    temperature, and feels-like temperature.
+                </p>
+                <div class="command-code"><code>psx weather</code></div>
+            </section>
+        </section>
 
         <aside class="commands-sidebar">
-
             <div class="commands-sidebar-section">
                 <h2>General</h2>
-
                 <a href="#help">help</a>
                 <a href="#version">version</a>
                 <a href="#about">about</a>
             </div>
 
-
             <div class="commands-sidebar-section">
                 <h2>System</h2>
-
                 <a href="#sysinfo">sysinfo</a>
                 <a href="#date">date</a>
                 <a href="#memory">memory</a>
@@ -54,261 +193,26 @@
                 <a href="#partition">partition</a>
                 <a href="#uptime">uptime</a>
                 <a href="#network">network</a>
+                <a href="#domain">domain</a>
+                <a href="#ping">ping</a>
+                <a href="#dns">dns</a>
+                <a href="#health">health</a>
+                <a href="#clearspace">clearspace</a>
+            </div>
+
+            <div class="commands-sidebar-section">
+                <h2>Utilities</h2>
+                <a href="#todo">todo</a>
+                <a href="#profile">profile</a>
+                <a href="#quick">quick</a>
+                <a href="#track">track</a>
                 <a href="#weather">weather</a>
             </div>
-
         </aside>
-
-
-        <!-- =========================
-             Main Content
-        ========================== -->
-
-        <section class="commands-content">
-
-            <div class="commands-intro">
-
-                <span class="commands-eyebrow">
-                    COMMAND REFERENCE
-                </span>
-
-                <h1>PSX CLI Commands</h1>
-
-                <p>
-                    This is the complete list of commands currently provided by PSX CLI. Each command handles one focused check and prints the result in your terminal.
-                </p>
-
-            </div>
-
-
-            <!-- =========================
-                 General
-            ========================== -->
-
-            <section id="help" class="command-section">
-
-                <div class="command-heading">
-                    <code>help</code>
-                    <span>General</span>
-                </div>
-
-                <h2>Help</h2>
-
-                <p>
-                    Shows all available commands and their purpose.
-                </p>
-
-                <div class="command-code">
-                    <code>psx help</code>
-                </div>
-
-            </section>
-
-
-            <section id="version" class="command-section">
-
-                <div class="command-heading">
-                    <code>version</code>
-                    <span>General</span>
-                </div>
-
-                <h2>Version</h2>
-
-                <p>
-                    Displays the current PsX version.
-                </p>
-
-                <div class="command-code">
-                    <code>psx version</code>
-                </div>
-
-            </section>
-
-
-            <section id="about" class="command-section">
-
-                <div class="command-heading">
-                    <code>about</code>
-                    <span>General</span>
-                </div>
-
-                <h2>About</h2>
-
-                <p>
-                    Provides information about the tool itself.
-                </p>
-
-                <div class="command-code">
-                    <code>psx about</code>
-                </div>
-
-            </section>
-
-
-            <!-- =========================
-                 System
-            ========================== -->
-
-            <section id="sysinfo" class="command-section">
-
-                <div class="command-heading">
-                    <code>sysinfo</code>
-                    <span>System</span>
-                </div>
-
-                <h2>System Information</h2>
-
-                <p>
-                    Shows operating system, distribution, kernel, CPU, and RAM information.
-                </p>
-
-                <div class="command-code">
-                    <code>psx sysinfo</code>
-                </div>
-
-            </section>
-
-
-            <section id="date" class="command-section">
-
-                <div class="command-heading">
-                    <code>date</code>
-                    <span>System</span>
-                </div>
-
-                <h2>Date</h2>
-
-                <p>
-                    Displays the current system date and time.
-                </p>
-
-                <div class="command-code">
-                    <code>psx date</code>
-                </div>
-
-            </section>
-
-
-            <section id="memory" class="command-section">
-
-                <div class="command-heading">
-                    <code>memory</code>
-                    <span>System</span>
-                </div>
-
-                <h2>Memory</h2>
-
-                <p>
-                    Shows information about system memory.
-                </p>
-
-                <div class="command-code">
-                    <code>psx memory</code>
-                </div>
-
-            </section>
-
-
-            <section id="disk" class="command-section">
-
-                <div class="command-heading">
-                    <code>disk</code>
-                    <span>System</span>
-                </div>
-
-                <h2>Disk</h2>
-
-                <p>
-                    Shows all detected disks on your device.
-                </p>
-
-                <div class="command-code">
-                    <code>psx disk</code>
-                </div>
-
-            </section>
-
-
-            <section id="partition" class="command-section">
-
-                <div class="command-heading">
-                    <code>partition</code>
-                    <span>System</span>
-                </div>
-
-                <h2>Partition</h2>
-
-                <p>
-                    Shows all partitions on your system.
-                </p>
-
-                <div class="command-code">
-                    <code>psx partition</code>
-                </div>
-
-            </section>
-
-
-            <section id="uptime" class="command-section">
-
-                <div class="command-heading">
-                    <code>uptime</code>
-                    <span>System</span>
-                </div>
-
-                <h2>Uptime</h2>
-
-                <p>
-                    Shows the system uptime.
-                </p>
-
-                <div class="command-code">
-                    <code>psx uptime</code>
-                </div>
-
-            </section>
-
-
-            <section id="network" class="command-section">
-
-                <div class="command-heading">
-                    <code>network</code>
-                    <span>System</span>
-                </div>
-
-                <h2>Network</h2>
-
-                <p>
-                    Shows network information, including available interfaces and addresses.
-                </p>
-
-                <div class="command-code">
-                    <code>psx network</code>
-                </div>
-
-            </section>
-
-            <section id="weather" class="command-section">
-                <div class="command-heading">
-                    <code>weather</code>
-                    <span>Utility</span>
-                </div>
-                <h2>Weather</h2>
-                <p>Shows the current weather, including the location, condition, temperature, and feels-like temperature. It requires an internet connection.</p>
-                <div class="command-code">
-                    <code>psx weather</code>
-                </div>
-            </section>
-
-        </section>
-
     </main>
-
 
     <footer class="site-footer">
         PsychxDev © 2026
     </footer>
-
 </body>
-
 </html>

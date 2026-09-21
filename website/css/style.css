@@ -15,8 +15,8 @@ body.home-page {
     grid-template-columns: minmax(0, 1fr) minmax(380px, 0.86fr);
     gap: clamp(42px, 7vw, 100px);
     align-items: center;
-    min-height: 680px;
-    padding: 82px 0 72px;
+    min-height: 0px;
+    padding: 82px 0 32px;
 }
 
 .hero-copy {
@@ -167,8 +167,24 @@ body.home-page {
 .typing-cursor { display: inline-block; width: 8px; height: 15px; margin-left: 6px; background: var(--accent); vertical-align: -2px; }
 .console-footer { padding: 10px 17px; border-top: 1px solid var(--line); background: rgba(13, 28, 39, 0.7); }
 
-.quick-facts { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 118px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.quick-facts div { padding: 22px 20px 21px 0; border-right: 1px solid var(--line); }.quick-facts div + div { padding-left: 20px; }.quick-facts div:last-child { border-right: 0; }
+.quick-facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    margin: 48px 0;
+    margin-top: 0;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+}
+
+.quick-facts div {
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+}
+
 .quick-facts strong { display: block; margin-bottom: 5px; color: var(--accent); font-size: 25px; letter-spacing: -0.05em; }.quick-facts span { color: var(--muted); font: 11px 'DM Mono', monospace; text-transform: uppercase; }
 
 .command-preview { display: grid; grid-template-columns: minmax(230px, 0.72fr) minmax(0, 1.28fr); gap: 65px; padding-bottom: 120px; }

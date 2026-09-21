@@ -11,3 +11,72 @@ body { background: radial-gradient(circle at 82% 10%, rgba(42, 111, 137, 0.18), 
 @media (max-width: 540px) { .commands-sidebar { display: block; }.commands-sidebar-section { margin-bottom: 18px; }.command-section { padding: 18px; }.command-section h2 { font-size: 22px; }.command-section p { font-size: 14px; } }
 @media (max-width: 430px) { .commands { width: calc(100% - 24px); padding-top: 58px; }.commands-intro h1 { font-size: 43px; }.commands-intro p { font-size: 14px; }.command-section { padding: 16px; }.command-code { font-size: 12px; } }
 @media (prefers-reduced-motion: reduce) { .commands-intro, .command-section { animation: none; transition: none; } }
+
+.commands {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 2rem;
+    align-items: start;
+}
+
+.commands-content {
+    grid-column: 1;
+    min-width: 0;
+}
+
+.commands-sidebar {
+    grid-column: 2;
+    grid-row: 1;
+    display: block;
+    position: sticky;
+    top: 1rem;
+    width: 240px;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+}
+
+.commands-sidebar-section {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 800px) {
+    .commands {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 24px);
+        padding-top: 58px;
+    }
+
+    .commands-sidebar {
+        position: static;
+        order: -1;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        margin-bottom: 2rem;
+        padding: 0;
+        overflow: visible;
+        background: transparent;
+    }
+
+    .commands-sidebar-section {
+        width: 100%;
+        margin: 0;
+    }
+
+    .commands-sidebar-section a {
+        padding: 6px 0;
+    }
+
+    .commands-content {
+        order: 1;
+        width: 100%;
+    }
+}

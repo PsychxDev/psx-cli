@@ -9,82 +9,146 @@ from psx.commands import date
 from psx.commands import about
 from psx.commands import uptime
 from psx.commands import network
-from psx.commands import weather
+from psx.commands import domain
+from psx.commands import ping
+from psx.commands import dns
+from psx.commands import todo
+from psx.commands import profile
+from psx.commands import health
+from psx.commands import cleanup
+from psx.commands import track
 
 commands = {
     "help": {
         "run": help_command.run,
-        "description": "Shows all available commands."
+        "description": "Shows available commands.",
+        "group": "Utility"
     },
 
     "version": {
         "run": version.run,
-        "description": "Displays the current PsX version."
+        "description": "Displays the current version of psx.",
+        "group": "Utility"
     },
 
     "about": {
         "run": about.run,
-        "description": "Provides information about the tool itself."
+        "description": "Information about the tool itself",
+        "group": "Utility"
     },
 
     "sysinfo": {
         "run": sysinfo.run,
-        "description": "Shows system information."
+        "description": "Shows system information.",
+        "group": "System"
     },
 
     "date": {
         "run": date.run,
-        "description": "Shows the current date and time."
+        "description": "Shows the current date.",
+        "group": "System"
     },
 
     "memory": {
         "run": memory.run,
-        "description": "Shows information about system memory."
+        "description": "Shows information about random access memory.",
+        "group": "System"
     },
 
     "disk": {
         "run": disk.run,
-        "description": "Shows all detected disks on your device."
+        "description": "Shows all disks detected on your device.",
+        "group": "System"
     },
 
     "partition": {
         "run": partition.run,
-        "description": "Shows all partitions on your system."
+        "description": "Shows all partitions on your PC.",
+        "group": "System"
     },
 
     "uptime": {
         "run": uptime.run,
-        "description": "Shows the system uptime."
+        "description": "Shows device Uptime.",
+        "group": "System"
     },
 
     "network": {
         "run": network.run,
-        "description": "Shows network information."
+        "description": "Shows network information",
+        "group": "Network"
     },
 
-    "weather": {
-        "run": weather.run,
-        "description": "Shows the current weather."
+    "domain": {
+        "run": domain.run,
+        "description": "Looks up a domain, resolves DNS, and checks common web ports.",
+        "group": "Network"
+    },
+
+    "ping": {
+        "run": ping.run,
+        "description": "Checks if a host responds to ICMP ping.",
+        "group": "Network"
+    },
+
+    "dns": {
+        "run": dns.run,
+        "description": "Looks up DNS A and AAAA records for a domain.",
+        "group": "Network"
+    },
+
+    "todo": {
+        "run": todo.run,
+        "description": "Manage a simple local todo list.",
+        "group": "Utility"
+    },
+
+    "profile": {
+        "run": profile.run,
+        "description": "Shows a detailed system profile snapshot.",
+        "group": "System"
+    },
+
+    "quick": {
+        "run": profile.quick,
+        "description": "Shows a compact system overview snapshot.",
+        "group": "System"
+    },
+
+    "health": {
+        "run": health.run,
+        "description": "Shows a compact health summary of the machine.",
+        "group": "System"
+    },
+    
+    "clearspace": {
+        "run": cleanup.run,
+        "description": "Checks free space and clears user cache files.",
+        "group": "System"
+    },
+
+    "track": {
+        "run": track.run,
+        "description": "Live monitor for system health and network activity.",
+        "group": "System"
     },
 }
 
 def main() :
-    try:
+    args = sys.argv[1:]
+    command = args[0] if args else None
 
-        args = sys.argv[1:]
-        command = args[0]
+    if command == "help" :
+        commands["help"]["run"](commands)
 
-        if command == "help" :
-            commands["help"]["run"](commands)
-
-        elif command in commands :
+    elif command in commands :
+        if len(args) > 1 :
+            commands[command]["run"](*args[1:])
+        else :
             commands[command]["run"]()
 
-        else :
-            print(f"Unknown Command: {command}")
-
-    except IndexError:
-        print("Missing command, must be -> psx <command>")
+    else :
+        print(f"Unknown Command: {command}")
 
 if __name__ == "__main__" :
     main()
