@@ -9,6 +9,7 @@ from psx.commands import date
 from psx.commands import about
 from psx.commands import uptime
 from psx.commands import network
+from psx.commands import weather
 from psx.commands import domain
 from psx.commands import ping
 from psx.commands import dns
@@ -75,7 +76,13 @@ commands = {
 
     "network": {
         "run": network.run,
-        "description": "Shows network information",
+        "description": "Shows network information.",
+        "group": "Network"
+    },
+
+    "weather": {
+        "run": weather.run,
+        "description": "Shows weather information about current detected location.",
         "group": "Network"
     },
 
