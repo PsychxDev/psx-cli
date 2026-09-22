@@ -15,7 +15,7 @@ from psx.commands import dns
 from psx.commands import todo
 from psx.commands import profile
 from psx.commands import health
-from psx.commands import cleanup
+from psx.commands import clearspace
 from psx.commands import track
 
 commands = {
@@ -122,7 +122,7 @@ commands = {
     },
     
     "clearspace": {
-        "run": cleanup.run,
+        "run": clearspace.run,
         "description": "Checks free space and clears user cache files.",
         "group": "System"
     },

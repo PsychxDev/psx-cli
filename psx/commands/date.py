@@ -1,9 +1,10 @@
 from datetime import datetime
+
 from psx.utils.display import header, sep
 
-def run() :
+
+def run() -> None:
     now = datetime.now()
     length = header("Datetime")
-    print(f"{'Date:':5} {now.strftime('%Y-%m-%d')}")
-    print(f"{'Time:':5} {now.strftime('%H-%M-%S')}")
+    print(now.strftime("%-d-%-m-%Y | %-I:%M %p"))
     sep(length)

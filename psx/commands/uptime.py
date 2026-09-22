@@ -1,27 +1,35 @@
 from psx.utils.display import header, sep
 
-def run() :
-    with open("/proc/uptime") as file:
-        content = file.read()
-        seconds = float(content.split()[0])
-        days = int(seconds // 86400)
-        remaining = seconds % 86400
-        hours = int(remaining // 3600)
-        remaining = remaining % 3600
-        minutes = int(remaining // 60)
 
-        length = header("Uptime")
+def format_uptime(seconds: float) -> str:
+    total_seconds = int(seconds)
+    days = total_seconds // 86400
+    hours = (total_seconds % 86400) // 3600
+    minutes = (total_seconds % 3600) // 60
 
-        if days == 0 and hours == 0 :
-            print(f"{'Uptime:':5} {minutes}m {seconds}s")
+    parts = []
 
-        elif days == 0 :
-            print(f"{'Uptime:':5} {hours}h {minutes}m")
+    if days > 0:
+        parts.append(f"{days}d")
+    if hours > 0 or days > 0:
+        parts.append(f"{hours}h")
+    if minutes > 0 or not parts:
+        parts.append(f"{minutes}m")
 
-        elif hours == 0 :
-            print(f"{'Uptime:':5} {days}d {minutes}m {seconds}s")
+    return " ".join(parts) if parts else "0m"
 
-        else :
-            print(f"{'Uptime:':5} {days}d {hours}h {minutes}m")
 
-        sep(length)
+def get_system_uptime() -> str:
+    try:
+        with open("/proc/uptime", "r", encoding="utf-8") as handle:
+            seconds = float(handle.read().split()[0])
+        return format_uptime(seconds)
+    except OSError:
+        return "Unknown"
+
+
+def run() -> None:
+    uptime = get_system_uptime()
+    length = header("PsX Uptime")
+    print(f"Uptime: {uptime}")
+    sep(length)

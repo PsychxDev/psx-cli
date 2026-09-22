@@ -2,6 +2,7 @@ from psx.utils.display import header, sep
 
 def run() :
     length = header("About")
-    print("PsX is an open source CLI Project that been made from one person called Psychx.")
-    print("Tool was made simple to keep CLI Commands easy to access, modify, share it.")
+    print(f"{'Tool:':<12} PsX")
+    print(f"{'Version:':<12} v2.0.1")
+    print(f"{'Author:':<12} Psychx")
     sep(length)

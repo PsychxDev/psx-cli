@@ -64,6 +64,7 @@ def run() :
 
     for interface, addresses in interfaces.items():
         if interface == "lo":
+            print("Currently Offline")
             continue
 
         if interface not in stats or not stats[interface].isup:
