@@ -1,4 +1,3 @@
-````markdown
 # PsX CLI
 
 PsX CLI is a lightweight Python command-line utility that brings system information, diagnostics, monitoring, networking tools, and everyday utilities into a single terminal interface.
@@ -158,6 +157,3 @@ The long-term goal of PsX is to provide a practical and lightweight command-line
 ## Author
 
 Developed by PsychxDev.
-
-```
-```
