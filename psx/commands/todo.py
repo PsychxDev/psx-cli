@@ -77,7 +77,7 @@ def remove_todo(store: TodoStore, item_id: int) -> bool:
 
 def print_todos(items: list[dict]) -> None:
     if not items:
-        print("No tasks found.")
+        print("No tasks found. \nUsage: \'psx todo add <task>\'")
         return
 
     for item in items:
@@ -93,7 +93,7 @@ def run(action: str = None, value: str = None) -> None:
 
     if action == "add":
         if not value:
-            print("Usage: psx todo add <task>")
+            print("Usage: \'psx todo add <task>\'")
             sep(length)
             return
         item = add_todo(store, value)

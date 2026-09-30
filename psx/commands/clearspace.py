@@ -82,6 +82,6 @@ def run(action: str | None = None) -> None:
         removed_size, removed_files = clean_cache()
         print(f"{'Cleaned:':12} {format_size(removed_size)} ({removed_files} files)")
     else:
-        print(f"{'Action:':12} Run `psx clearspace clean` to clear user cache files.")
+        print(f"{'Action:':12} Run \'psx clearspace clean\' to clear user cache files.")
 
     sep(length)

@@ -88,7 +88,7 @@ def render_profile(profile: dict) -> None:
     print(f"{'RAM:':12} {profile['memory']['used']} GB / {profile['memory']['total']} GB")
     print(f"{'Disk:':12} {profile['disk']['used']} GB / {profile['disk']['total']} GB")
 
-    print("Network")
+    print("Network:")
     if profile["network"]:
         for item in profile["network"]:
             ipv4 = ", ".join(item["ipv4"]) if item["ipv4"] else "Not available"

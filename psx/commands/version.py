@@ -1,7 +1,6 @@
-from importlib.metadata import version
 from psx.utils.display import header, sep
 
 def run():
     length = header("Version")
-    print("PsX v" + version("psx-sys"))
+    print("PsX v2.0.3")
     sep(length)
